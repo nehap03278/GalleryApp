@@ -7,7 +7,7 @@ import type {
   RegisterFormErrors,
 } from '../types/auth';
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_REGEX = /^[^\s@]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)+$/;
 const MOBILE_REGEX = /^\d{10}$/;
 
 export function isValidEmail(email: string): boolean {
