@@ -28,9 +28,15 @@ export function Dropdown({ label, selectedValue, onValueChange, options, placeho
           style={styles.picker}
           dropdownIconColor={colors.text}
         >
-          <Picker.Item label={placeholder} value="" color={colors.textMuted} />
+          <Picker.Item label={placeholder} value="" color={colors.textMuted} style={styles.item} />
           {options.map((option) => (
-            <Picker.Item key={option.value} label={option.label} value={option.value} color={colors.text} />
+            <Picker.Item
+              key={option.value}
+              label={option.label}
+              value={option.value}
+              color={colors.text}
+              style={styles.item}
+            />
           ))}
         </Picker>
       </View>
@@ -61,6 +67,10 @@ const styles = StyleSheet.create({
   },
   picker: {
     color: colors.text,
+    backgroundColor: colors.surface,
+  },
+  // Android draws the popup with the system theme; force a light row so text stays readable in device dark mode.
+  item: {
     backgroundColor: colors.surface,
   },
   errorText: {
